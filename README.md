@@ -24,6 +24,7 @@
 | 2026 年 7 月 | Agent 入门 | 完成 Hello Agents 第一章，理解 Agent、PEAS、ReAct、工具、记忆和终止边界 |
 | 2026 年 8 月初 | 大模型与 Agent 扫盲 | 快速学习 Agent 发展背景、大模型能力边界、Token、上下文、Prompt、采样和幻觉 |
 | 2026 年 8 月 | LangGraph | 学习 State、Node、Edge、Checkpoint，并完成固定搜索 Workflow 改编 |
+| 2026 年 8 月 | HelloAgents 框架 | 改写第七章自建 Agent 框架，适配 DeepSeek/OpenAI 兼容接口并完成本地运行验证 |
 | 后续 | 项目工程化 | 根据项目需要补充 RAG 二次开发、FastAPI、MySQL、Docker、评测和部署 |
 
 ## 当前可展示内容
@@ -44,10 +45,19 @@
 
 这个示例明确标注为 Workflow，而不是动态 ReAct Agent，重点展示固定流程和动态 Agent 的区别。
 
+### 3. HelloAgents 自建 Agent 框架：第七章改编
+
+目录：[hello_agent_study/chapter07_helloagents_framework](hello_agent_study/chapter07_helloagents_framework)
+
+在课程框架基础上完成可运行改编，保留 `HelloAgentsLLM`、Agent 基类、Simple/ReAct/Reflection/Plan-and-Solve 四种 Agent，以及 `ToolRegistry`、工具链和异步工具执行器等模块。项目支持 DeepSeek 或其他 OpenAI 兼容模型接口，并提供不调用 API 的本地框架自检。
+
+这个项目的学习重点是理解框架设计，而不是把教学框架包装成生产项目：统一模型接口负责屏蔽服务差异，Agent 基类负责复用公共能力，工具注册表负责解耦 Agent 与具体工具，具体 Agent 范式负责实现不同的任务执行策略。
+
 ## 仓库结构
 
     hello_agent_study/
         Hello Agents 课程精选改编与学习说明
+        chapter07_helloagents_framework/
     docs/
         学习日志和阶段记录
     projects/
@@ -58,7 +68,7 @@
 1. 准备自己的 Python 环境。当前学习环境原则上使用 agent_study_env。
 2. 将 .env.example 复制为根目录的 .env，并填写自己的模型和搜索服务配置。
 3. 进入对应示例目录，安装该目录的 requirements.txt。
-4. 根据子目录 README 运行 Python 文件。
+4. 根据子目录 README 运行 Python 文件。第七章可以先运行 `test_local_framework.py` 和 `run_demo.py`，确认本地框架结构后再配置模型 API。
 
 真实配置文件 .env 已被 Git 忽略，禁止把 API Key 提交到仓库。
 
