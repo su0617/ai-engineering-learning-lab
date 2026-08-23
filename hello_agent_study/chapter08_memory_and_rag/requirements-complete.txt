@@ -1,0 +1,4 @@
+# 完整运行第八章 Memory/RAG/Web 示例时使用。
+# 当前未在 agent_study_env 中安装，避免提前下载大型模型和数据库依赖。
+hello-agents[memory,rag]==0.2.9
+gradio>=4.0.0,<5.0.0

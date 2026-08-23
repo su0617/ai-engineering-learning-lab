@@ -1,35 +1,51 @@
 # Hello Agents 学习改编
 
-本目录记录 Datawhale Hello Agents 的精选学习改编内容。这里保留经过阅读、运行和调整的示例，不上传课程原始压缩包、PDF、大型数据集、密钥或本地运行缓存。
+本目录记录 Datawhale `Hello-Agents` 课程中与 Agent 应用工程直接相关的代码改编，重点覆盖 ReAct、LangGraph、自建 Agent 框架、Memory 和 RAG。
 
-课程来源：
+## 项目目录
 
-- 源码仓库：https://github.com/datawhalechina/hello-agents
-- 课程网站：https://hello-agents.datawhale.cc/
-
-## 当前收录
-
-| 目录 | 内容 | 学习重点 |
+| 目录 | 时间 | 技术内容 |
 | --- | --- | --- |
-| chapter01_react_travel_agent | 手写 ReAct 旅行助手 | Thought、Action、Observation、工具注册和循环边界 |
-| chapter06_langgraph_search | LangGraph 搜索问答 Workflow | State、Node、Edge、消息和检查点 |
-| chapter07_helloagents_framework | 自建 Agent 框架改编 | 统一 LLM 接口、Agent 基类、四种 Agent 范式和工具注册表 |
+| `chapter01_react_travel_agent` | 2026-07 | 手写 ReAct 旅行助手、工具注册和执行循环 |
+| `chapter06_langgraph_search` | 2026-08 | LangGraph State、Node、Edge 和搜索 Workflow |
+| `chapter07_helloagents_framework` | 2026-08 | Agent 基类、Simple/ReAct/Reflection/Plan-and-Solve、ToolRegistry |
+| `chapter08_memory_and_rag` | 2026-08 | Memory、RAG、向量检索、工具集成和文档问答 |
 
-## 我的改动
+## 技术栈
 
-- 移除真实 API Key 和个人电脑路径。
-- 统一使用仓库根目录的 .env 配置。
-- 增加配置检查、异常处理和适合初学者阅读的必要注释。
-- 根据当前学习环境调整依赖版本范围。
-- 在文档中明确标注课程改编内容与当前局限。
-- 第七章保留框架源码，使用 DeepSeek/OpenAI 兼容接口进行适配，并增加无 API 本地自检入口。
+- Python
+- DeepSeek/OpenAI 兼容 API
+- LangChain / LangGraph
+- HelloAgents
+- ReAct Agent
+- RAG 与 Embedding
+- Qdrant / Neo4j（按需启用）
+- Gradio（综合 Web 示例）
+- Docker、FastAPI、MySQL 等工程化内容将在后续项目中补充
 
-## 配置与运行
+## 代码说明
 
-将仓库根目录的 .env.example 复制为 .env，填写自己的模型服务和 Tavily 配置。两个示例都使用 OpenAI 兼容接口调用模型，并使用 Tavily 搜索网页资料。
+这些目录是课程代码的学习改编，不是课程原始压缩包，也不宣称为独立生产项目。每个目录尽量保留原始技术主线，并补充：
 
-具体运行方式、数据流和改动说明见各子目录 README。第七章默认先运行本地计算器自检，显式选择模型模式后才会调用 API。
+- DeepSeek/OpenAI 兼容接口配置；
+- 环境变量模板；
+- 必要的异常处理和运行边界；
+- 面向代码阅读的注释；
+- 项目 README、运行说明和改动记录。
 
-## 许可说明
+## 安全与仓库规范
 
-本目录内容基于 CC BY-NC-SA 4.0 许可的 Hello Agents。课程来源、署名、非商业使用和相同方式共享要求见 [LICENSE.md](LICENSE.md)。
+- 不提交真实 API Key、`.env`、个人绝对路径和模型文件；
+- 本地知识库、数据库文件、运行报告和缓存均由 `.gitignore` 忽略；
+- 大型依赖和模型不随仓库提交，按项目 README 分阶段安装；
+- 课程来源和许可说明见 [LICENSE.md](LICENSE.md)。
+
+## 学习时间线
+
+| 时间 | 产出 |
+| --- | --- |
+| 2026-07 | LangChain 基础、RAG 数据流和手写 ReAct Demo |
+| 2026-08 | LangGraph 搜索 Workflow、自建 Agent 框架、Memory 与 RAG 代码改编 |
+| 后续 | 围绕实际项目补充 FastAPI、MySQL、Docker、评测和可观测性 |
+
+课程来源：[Datawhale Hello-Agents](https://github.com/datawhalechina/hello-agents)。

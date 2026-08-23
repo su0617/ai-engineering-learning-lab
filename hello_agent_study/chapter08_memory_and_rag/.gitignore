@@ -1,0 +1,12 @@
+# Local configuration and generated runtime data
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+*_kb/
+outputs/
+learning_report_*.json
+*.db
+*.sqlite
+.cache/

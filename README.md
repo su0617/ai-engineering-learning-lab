@@ -1,84 +1,64 @@
-# AI 应用工程学习与项目记录
+# AI 应用工程学习与项目展示
 
-这是我的 AI 应用工程学习档案与项目展示仓库，记录学习时间、阶段目标、技术实践、代码改动和阶段性成果。
+这是一个面向 AI 应用工程岗位的学习与项目仓库，记录 Agent、RAG、工作流、工具调用和相关工程化实践。仓库内容以可追溯的代码改编、技术验证和后续独立项目为主。
 
-当前主线是 Python + 大模型应用工程，重点学习 Agent、RAG、工作流、工具调用、上下文管理和工程部署。后续会根据实习、课题组任务和实际项目需要，继续补充 FastAPI、MySQL、Docker、评测、可观测性，以及模型部署和推理相关能力。
+## 技术方向
 
-本仓库不是课程代码压缩包，也不是把照着教程运行过的内容包装成独立项目。仓库中的内容会尽量标明来源、改动范围、掌握程度和当前局限，便于持续追溯。
+- Python 大模型应用开发
+- ReAct Agent 与工具调用
+- LangChain / LangGraph
+- RAG、Embedding、向量检索和知识库
+- Memory、Context 和 Agent Harness
+- FastAPI、MySQL、Docker、评测与可观测性
 
-## 个人方向概览
+## 当前项目与实践
 
-| 项目 | 内容 |
-| --- | --- |
-| 当前阶段 | 南京农业大学计算机技术方向，研究生入学前后持续学习 |
-| 目标方向 | Python AI 应用工程、Agent / RAG 开发，后续根据实践考虑 AI Infra |
-| 当前重点 | 看懂系统架构、数据流和模块职责，完成有意义的二次开发 |
-| 学习方式 | 先建立技术全景，再围绕真实项目深入实现、测试和部署 |
-| 代码原则 | 不上传密钥、课程原包、个人路径、模型文件或隐私数据 |
+### Hello Agents 学习改编
 
-## 学习与实践进度
+目录：[hello_agent_study](hello_agent_study/)
 
-| 时间 | 阶段 | 学习与产出 |
+| 时间 | 项目 | 技术内容 |
 | --- | --- | --- |
-| 2026 年 7 月 | LangChain 基础 | 学习模型调用、Prompt、Chain、结构化输出、RAG 基础和工具调用 |
-| 2026 年 7 月 | Agent 入门 | 完成 Hello Agents 第一章，理解 Agent、PEAS、ReAct、工具、记忆和终止边界 |
-| 2026 年 8 月初 | 大模型与 Agent 扫盲 | 快速学习 Agent 发展背景、大模型能力边界、Token、上下文、Prompt、采样和幻觉 |
-| 2026 年 8 月 | LangGraph | 学习 State、Node、Edge、Checkpoint，并完成固定搜索 Workflow 改编 |
-| 2026 年 8 月 | HelloAgents 框架 | 改写第七章自建 Agent 框架，适配 DeepSeek/OpenAI 兼容接口并完成本地运行验证 |
-| 后续 | 项目工程化 | 根据项目需要补充 RAG 二次开发、FastAPI、MySQL、Docker、评测和部署 |
+| 2026-07 | ReAct 旅行助手 | Thought-Action-Observation、工具注册、Action 解析和循环边界 |
+| 2026-08 | LangGraph 搜索 Workflow | State、Node、Edge、条件流程和检查点 |
+| 2026-08 | 自建 Agent 框架 | Agent 抽象、Simple/ReAct/Reflection/Plan-and-Solve、工具系统 |
+| 2026-08 | Memory 与 RAG | 记忆类型、生命周期、文档摄取、检索增强和综合问答 |
 
-## 当前可展示内容
+这些内容来源于 Datawhale `Hello-Agents`，已根据本地学习环境进行配置适配和脱敏，具体改动记录在各项目目录 README 中。
 
-### 1. ReAct 旅行助手：课程改编练习
+## 代码与工程规范
 
-目录：[hello_agent_study/chapter01_react_travel_agent](hello_agent_study/chapter01_react_travel_agent)
+- 使用 `.env.example` 提供配置模板，真实密钥只保存在本地；
+- 不提交个人绝对路径、数据库密码、模型文件和运行缓存；
+- 大型模型、数据库服务和重型依赖按项目需要单独准备；
+- README 记录项目目标、技术栈、架构、运行方式、改动范围和当前边界；
+- 教程改编与独立项目分开标注，避免混淆学习练习和原创项目。
 
-在 Hello Agents 示例基础上，保留手写 Thought-Action-Observation 循环，完成了配置脱敏、路径适配、工具注册、异常处理和 Action 解析调整。
+## 学习时间线
 
-可以说明的内容包括：大模型如何决定下一步行动、工具如何被注册和调用、Observation 如何回传、为什么需要循环上限，以及正则解析方案的局限。
-
-### 2. LangGraph 搜索问答：框架学习改编
-
-目录：[hello_agent_study/chapter06_langgraph_search](hello_agent_study/chapter06_langgraph_search)
-
-使用 LangGraph 将“理解问题 → 搜索资料 → 组织回答”拆成固定节点，学习 State、Node、Edge、消息追加和内存检查点。
-
-这个示例明确标注为 Workflow，而不是动态 ReAct Agent，重点展示固定流程和动态 Agent 的区别。
-
-### 3. HelloAgents 自建 Agent 框架：第七章改编
-
-目录：[hello_agent_study/chapter07_helloagents_framework](hello_agent_study/chapter07_helloagents_framework)
-
-在课程框架基础上完成可运行改编，保留 `HelloAgentsLLM`、Agent 基类、Simple/ReAct/Reflection/Plan-and-Solve 四种 Agent，以及 `ToolRegistry`、工具链和异步工具执行器等模块。项目支持 DeepSeek 或其他 OpenAI 兼容模型接口，并提供不调用 API 的本地框架自检。
-
-这个项目的学习重点是理解框架设计，而不是把教学框架包装成生产项目：统一模型接口负责屏蔽服务差异，Agent 基类负责复用公共能力，工具注册表负责解耦 Agent 与具体工具，具体 Agent 范式负责实现不同的任务执行策略。
+| 时间 | 阶段性内容 |
+| --- | --- |
+| 2026-07 | LangChain 基础、Prompt、Chain、结构化输出、RAG 和工具调用 |
+| 2026-07 | 手写 ReAct Agent 与 Agent 基础概念 |
+| 2026-08 | LangGraph Workflow 和 HelloAgents 自建框架 |
+| 2026-08 | Memory、RAG、Embedding、MQE/HyDE 和文档问答系统 |
+| 后续 | 面向真实项目补充接口封装、数据库、部署、评测和可观测性 |
 
 ## 仓库结构
 
-    hello_agent_study/
-        Hello Agents 课程精选改编与学习说明
-        chapter07_helloagents_framework/
-    docs/
-        学习日志和阶段记录
-    projects/
-        后续独立项目或有实质改动的项目
+```text
+hello_agent_study/
+├── chapter01_react_travel_agent/
+├── chapter06_langgraph_search/
+├── chapter07_helloagents_framework/
+└── chapter08_memory_and_rag/
+projects/
+docs/
+```
 
-## 如何运行示例
+## 课程来源
 
-1. 准备自己的 Python 环境。当前学习环境原则上使用 agent_study_env。
-2. 将 .env.example 复制为根目录的 .env，并填写自己的模型和搜索服务配置。
-3. 进入对应示例目录，安装该目录的 requirements.txt。
-4. 根据子目录 README 运行 Python 文件。第七章可以先运行 `test_local_framework.py` 和 `run_demo.py`，确认本地框架结构后再配置模型 API。
+- [Datawhale Hello-Agents](https://github.com/datawhalechina/hello-agents)
+- [Hello Agents 在线教程](https://hello-agents.datawhale.cc/)
 
-真实配置文件 .env 已被 Git 忽略，禁止把 API Key 提交到仓库。
-
-## 后续规划
-
-- 继续学习 LangGraph，并结合 learn-claude-code 理解 Agent Harness 和工程机制。
-- 选择合适的成熟 RAG / Agent 项目进行架构分析和二次开发。
-- 根据真实需求补齐 FastAPI、MySQL、Docker、评测和可观测性。
-- 结合课题组和实习机会，在 AI 应用工程与 AI Infra 之间确定下一阶段深化方向。
-
-## 课程来源说明
-
-hello_agent_study 中的内容基于 Datawhale Hello Agents，属于学习改编，不代表独立原创项目。具体来源、改动和许可说明见 [hello_agent_study/README.md](hello_agent_study/README.md) 和 [hello_agent_study/LICENSE.md](hello_agent_study/LICENSE.md)。
+本仓库用于学习记录和项目展示。课程改编内容会保留来源、改动说明和边界，后续独立项目将单独说明业务目标、工程设计和个人实现内容。
