@@ -10,6 +10,7 @@
 | `chapter06_langgraph_search` | 2026-08 | LangGraph State、Node、Edge 和搜索 Workflow |
 | `chapter07_helloagents_framework` | 2026-08 | Agent 基类、Simple/ReAct/Reflection/Plan-and-Solve、ToolRegistry |
 | `chapter08_memory_and_rag` | 2026-08 | Memory、RAG、向量检索、工具集成和文档问答 |
+| `chapter9` | 2026-09 | ContextBuilder、Memory/Note/Terminal 工具和代码库维护助手 |
 
 ## 技术栈
 
@@ -46,6 +47,7 @@
 | --- | --- |
 | 2026-07 | LangChain 基础、RAG 数据流和手写 ReAct Demo |
 | 2026-08 | LangGraph 搜索 Workflow、自建 Agent 框架、Memory 与 RAG 代码改编 |
+| 2026-09 | 上下文工程与代码库维护助手学习改编 |
 | 后续 | 围绕实际项目补充 FastAPI、MySQL、Docker、评测和可观测性 |
 
 课程来源：[Datawhale Hello-Agents](https://github.com/datawhalechina/hello-agents)。

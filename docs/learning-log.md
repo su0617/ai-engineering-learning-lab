@@ -64,6 +64,19 @@
 - 能够区分本示例的固定 Workflow 与动态 ReAct Agent。
 - 后续需要在更复杂的分支、持久化、工具调用和评测中继续深入。
 
+## 2026 年 9 月：上下文工程与代码库维护助手
+
+阶段产出：
+
+- 完成 Datawhale Hello-Agents 第九章 `codebase_maintainer.py` 的学习改编整理。
+- 梳理 ContextBuilder、NoteTool、TerminalTool、MemoryTool 与 FunctionCallAgent 的组合关系。
+- 将演示项目名和代码库路径改为通用相对值，并补充运行产物忽略规则。
+
+当前边界：
+
+- 本次只进行源码脱敏和文档整理，没有安装依赖或启动外部服务。
+- 代码仍属于课程学习改编，尚未进行完整兼容性验证和生产级权限、评测改造。
+
 ## 下一阶段
 
 - 继续学习 LangGraph，并结合 Agent Harness 相关项目理解工程机制。

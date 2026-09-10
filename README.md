@@ -42,6 +42,7 @@
 | 2026-07 | 手写 ReAct Agent 与 Agent 基础概念 |
 | 2026-08 | LangGraph Workflow 和 HelloAgents 自建框架 |
 | 2026-08 | Memory、RAG、Embedding、MQE/HyDE 和文档问答系统 |
+| 2026-09 | 上下文工程与代码库维护助手学习改编 |
 | 后续 | 面向真实项目补充接口封装、数据库、部署、评测和可观测性 |
 
 ## 仓库结构
@@ -51,7 +52,8 @@ hello_agent_study/
 ├── chapter01_react_travel_agent/
 ├── chapter06_langgraph_search/
 ├── chapter07_helloagents_framework/
-└── chapter08_memory_and_rag/
+├── chapter08_memory_and_rag/
+└── chapter9/
 projects/
 docs/
 ```
