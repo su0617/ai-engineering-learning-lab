@@ -77,6 +77,19 @@
 - 本次只进行源码脱敏和文档整理，没有安装依赖或启动外部服务。
 - 代码仍属于课程学习改编，尚未进行完整兼容性验证和生产级权限、评测改造。
 
+## 2026 年 10 月：OpsPilot 多智能体 AIOps 项目
+
+阶段产出：
+
+- 整理一个面向 OnCall / SRE 场景的多智能体故障诊断项目，保留来源、许可证和继承边界。
+- 梳理 FastAPI、LangGraph、Skill、RAG、MCP、Redis Streams、PostgreSQL 和 Evidence 的职责关系。
+- 保留并记录 Lite Mode 单机验证路径，补充公开仓库所需的配置脱敏、路径适配和项目说明。
+
+当前边界：
+
+- Lite Mode 的局部链路有既有验证记录；完整 Docker、Milvus、Redis、PostgreSQL、MCP、Worker 和 deep 图未在本次同步中重新验证。
+- 该目录属于开源项目学习整理和二次开发，不把继承架构包装为完全原创生产系统。
+
 ## 下一阶段
 
 - 继续学习 LangGraph，并结合 Agent Harness 相关项目理解工程机制。

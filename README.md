@@ -26,6 +26,16 @@
 
 这些内容来源于 Datawhale `Hello-Agents`，已根据本地学习环境进行配置适配和脱敏，具体改动记录在各项目目录 README 中。
 
+### OpsPilot：多智能体 AIOps 诊断工作台
+
+目录：[projects/ops-pilot](projects/ops-pilot/)
+
+这是一个基于开源项目进行学习整理和二次开发的 AIOps Agent 项目，围绕故障路由、RAG 检索、MCP 工具、证据聚合和诊断报告展开。个人改动集中在 Lite Mode 单机验证路径、轻量检索适配、降级报告和学习文档整理。完整架构、继承内容、已验证范围和局限见该目录 README。
+
+| 时间 | 项目 | 技术内容 |
+| --- | --- | --- |
+| 2026-10 | OpsPilot | LangGraph、Fast/Deep Agent、RAG、FAISS、MCP、Redis Streams、PostgreSQL、Lite Mode |
+
 ## 代码与工程规范
 
 - 使用 `.env.example` 提供配置模板，真实密钥只保存在本地；
@@ -43,6 +53,7 @@
 | 2026-08 | LangGraph Workflow 和 HelloAgents 自建框架 |
 | 2026-08 | Memory、RAG、Embedding、MQE/HyDE 和文档问答系统 |
 | 2026-09 | 上下文工程与代码库维护助手学习改编 |
+| 2026-10 | OpsPilot 多智能体 AIOps 项目学习整理与二次开发 |
 | 后续 | 面向真实项目补充接口封装、数据库、部署、评测和可观测性 |
 
 ## 仓库结构
@@ -55,6 +66,7 @@ hello_agent_study/
 ├── chapter08_memory_and_rag/
 └── chapter9/
 projects/
+└── ops-pilot/
 docs/
 ```
 
